@@ -22,7 +22,10 @@ app.use(bodyParser.json());
 
 // ✅ Proper CORS setup
 app.use(cors({
-  origin: "http://localhost:3000",
+  origin: [
+    "http://localhost:3000",
+    "https://ecommerce-frontend-alpha-cyan-78.vercel.app"
+  ],
   credentials: true
 }));
 
@@ -134,7 +137,7 @@ app.get("/", (req, res) => {
 
 
 // Start server
-app.listen(PORT, "127.0.0.1", () => {
-  console.log(`🚀 Server running on http://127.0.0.1:${PORT}`);
+app.listen(PORT, () => {
+  console.log(`🚀 Server running on port ${PORT}`);
 });
 
